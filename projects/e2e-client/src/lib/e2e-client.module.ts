@@ -1,16 +1,10 @@
 import { NgModule } from '@angular/core';
-import { E2eClientComponent } from './e2e-client.component';
-
-
+import { FormsModule } from '@angular/forms';
+import { SkyE2eThemeSelectorComponent } from './theme-selector/theme-selector.component';
 
 @NgModule({
-  declarations: [
-    E2eClientComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    E2eClientComponent
-  ]
+  declarations: [SkyE2eThemeSelectorComponent],
+  imports: [FormsModule],
+  exports: [SkyE2eThemeSelectorComponent],
 })
-export class E2eClientModule { }
+export class SkyE2eClientModule {}
