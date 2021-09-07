@@ -37,7 +37,8 @@
           "options": {
             "main": "projects/e2e-client/src/test.ts",
             "tsConfig": "projects/e2e-client/tsconfig.spec.json",
-            "karmaConfig": "projects/e2e-client/karma.conf.js"
+            "karmaConfig": "projects/e2e-client/karma.conf.js",
+            "codeCoverage": true
           }
         }
       }

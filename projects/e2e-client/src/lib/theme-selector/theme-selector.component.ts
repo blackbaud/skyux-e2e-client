@@ -7,7 +7,7 @@ import {
   SkyThemeSettings,
 } from '@skyux/theme';
 
-type ThemeSelectorValue = 'default' | 'modern-light' | 'modern-dark';
+import { ThemeSelectorValue } from './theme-selector-value';
 
 @Component({
   selector: 'sky-e2e-theme-selector',
@@ -36,17 +36,13 @@ export class SkyE2eThemeSelectorComponent implements OnInit {
     this.themeSvc.settingsChange.subscribe((settingsChange) => {
       const settings = settingsChange.currentSettings;
 
-      switch (settings.theme.name) {
-        case 'modern':
-          if (settings.mode === SkyThemeMode.presets.dark) {
-            this.themeName = 'modern-dark';
-          } else {
-            this.themeName = 'modern-light';
-          }
-          break;
-        default:
-          this.themeName = 'default';
-          break;
+      if (settings.theme === SkyTheme.presets.modern) {
+        this.themeName =
+          settings.mode === SkyThemeMode.presets.dark
+            ? 'modern-dark'
+            : 'modern-light';
+      } else {
+        this.themeName = 'default';
       }
     });
   }
