@@ -5,6 +5,14 @@
   "projects": {
     "e2e-client": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "projects/e2e-client",
       "sourceRoot": "projects/e2e-client/src",
       "prefix": "sky",
@@ -29,7 +37,8 @@
           "options": {
             "main": "projects/e2e-client/src/test.ts",
             "tsConfig": "projects/e2e-client/tsconfig.spec.json",
-            "karmaConfig": "projects/e2e-client/karma.conf.js"
+            "karmaConfig": "projects/e2e-client/karma.conf.js",
+            "codeCoverage": true
           }
         }
       }
@@ -62,6 +71,8 @@
               "projects/e2e-client-showcase/src/assets"
             ],
             "styles": [
+              "node_modules/@skyux/theme/css/sky.css",
+              "node_modules/@skyux/theme/css/themes/modern/styles.css",
               "projects/e2e-client-showcase/src/styles.scss"
             ],
             "scripts": []
@@ -129,9 +140,7 @@
               "projects/e2e-client-showcase/src/favicon.ico",
               "projects/e2e-client-showcase/src/assets"
             ],
-            "styles": [
-              "projects/e2e-client-showcase/src/styles.scss"
-            ],
+            "styles": ["projects/e2e-client-showcase/src/styles.scss"],
             "scripts": []
           }
         }
