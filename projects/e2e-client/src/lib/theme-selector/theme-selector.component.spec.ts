@@ -10,10 +10,9 @@ import {
 
 import { BehaviorSubject } from 'rxjs';
 
-import { SkyE2eClientModule } from '../e2e-client.module';
 import { ThemeSelectorValue } from './theme-selector-value';
-
 import { SkyE2eThemeSelectorComponent } from './theme-selector.component';
+import { SkyE2eThemeSelectorModule } from './theme-selector.module';
 
 describe('ThemeSelectorComponent', () => {
   let component: SkyE2eThemeSelectorComponent;
@@ -80,7 +79,7 @@ describe('ThemeSelectorComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [SkyE2eClientModule],
+      imports: [SkyE2eThemeSelectorModule],
       providers: [
         {
           provide: SkyThemeService,
