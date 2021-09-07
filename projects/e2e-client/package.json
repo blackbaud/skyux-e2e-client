@@ -1,5 +1,5 @@
 {
-  "name": "e2e-client",
+  "name": "@skyux/e2e-client",
   "version": "5.0.0",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
